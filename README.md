@@ -1,5 +1,7 @@
 # springboot-session-test
 
+[![Build](https://github.com/btamilselvan/springboot-session-test/actions/workflows/build.yml/badge.svg)](https://github.com/btamilselvan/springboot-session-test/actions/workflows/build.yml)
+
 Minimal Spring Boot app for reproducing a specific Tomcat/Spring Security
 memory leak pattern under load:
 
