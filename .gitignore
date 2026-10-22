@@ -1,0 +1,3 @@
+target/
+*.hprof
+.claude/settings.local.json

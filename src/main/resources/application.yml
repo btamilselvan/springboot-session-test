@@ -1,0 +1,25 @@
+server:
+  port: 8080
+  tomcat:
+    mbeanregistry:
+      enabled: true
+  servlet:
+    session:
+      timeout: 30m
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics
+
+loadtest:
+  # Default Spring Security behaviour: a session is created on demand and
+  # the SecurityContext is persisted into it. Switch to ALWAYS to force a
+  # session (and therefore the leak) on every single request.
+  session-creation-policy: IF_REQUIRED
+  # Number of GrantedAuthority objects attached to each authenticated
+  # request, and the padding (bytes) each one carries. These two multiply
+  # together to control how fast the leak becomes visible in the heap.
+  authority-count: 5
+  authority-payload-bytes: 10240
